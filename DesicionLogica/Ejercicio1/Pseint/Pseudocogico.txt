@@ -1,0 +1,15 @@
+Algoritmo SalarioHora
+	Escribir "Ingrese su nombre"
+	leer nombre
+	Escribir "Ingresa tu salario por hora"
+	leer salario
+	Escribir "Cuantas horas trabajas"
+	leer  horas
+	SalarioFinal<- salario*horas
+	
+	Si SalarioFinal> 450000 Entonces
+		Escribir nombre " tu salario es: " SalarioFinal
+	SiNo
+		Escribir nombre 
+	Fin Si
+FinAlgoritmo

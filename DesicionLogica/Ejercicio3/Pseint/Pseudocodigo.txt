@@ -1,0 +1,47 @@
+SubProceso PrecioFinal <- Descuento (ValorCredito,NumCreditos,porcentaje)
+	Creditot <- ValorCredito*NumCreditos
+	Descuento1 <- (Creditot*porcentaje)/100
+	PrecioFinal <- Creditot-Descuento1
+FinSubProceso
+
+Proceso Universidad
+	Escribir 'Tipo de estudios que deseas realizar en la Universidad Whalien (Da tu respuesta con la numeracion correspondiente)'
+	Escribir '1. Pregrado'
+	Escribir '2. Posgrado'
+	Leer programa
+	Escribir 'Cuál es tu promedio, en decimales (ej: 4.0 4.5)'
+	Leer promedio
+	Segun programa  Hacer
+		1:
+			ValorCredito <- 50000
+			Si promedio>=4.5 Entonces
+				Escribir 'el precio de la carrera con el 25% de descuento:',Descuento(ValorCredito,28,25)
+			SiNo Si promedio<4.5 y promedio>=4.0 Entonces
+					Escribir 'el precio de la carrera con el 10% de descuento:',Descuento(ValorCredito,25,10)
+				SiNo Si promedio<4.0 y promedio>=3.5 Entonces
+						Creditot <- credito*20
+						Escribir 'el precio de la carrera es de:',Creditot
+					SiNo Si promedio<3.5 y promedio>=2.5 Entonces
+							Creditot <- credito*15
+							Escribir 'el precio de la carrera es de:',Creditot
+						SiNo Si promedio<2.5 Entonces
+								Escribir 'No puede matricularse, su promedio es muy bajo'
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		2:
+			ValorCredito <- 300000
+			Si promedio>=4.5 Entonces
+				Escribir 'el precio de la carrera con el 25% de descuento:',Descuento(ValorCredito,20,20)
+			SiNo
+				Si promedio<4.5 Entonces
+					Creditot <- credito*10
+					Escribir 'el precio de la carrera es de:',Creditot
+				FinSi
+			FinSi
+		De Otro Modo:
+			Escribir 'Error al seleccionar la carrera'
+	FinSegun
+FinProceso
